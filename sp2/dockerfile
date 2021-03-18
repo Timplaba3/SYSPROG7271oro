@@ -1,0 +1,7 @@
+FROM amazonlinux
+RUN yum -y install gcc
+COPY sp2oro7271-b.s .
+RUN gcc sp2oro7271-b.s
+CMD strip a.out
+CMD strip -R .note.gnu.build-id a.out
+CMD ./a.out && echo
