@@ -1,0 +1,10 @@
+FROM amazonlinux
+RUN yum install -y java-1.7.0-openjdk-devel
+COPY IpCheckerClass.java .
+COPY PingClass.java .
+RUN javac PingClass.java
+RUN echo Manifest-Version: 1.0 > MANIFEST.MF
+RUN echo Main-Class: PingClass >> MANIFEST.MF
+RUN jar cvmf MANIFEST.MF sp4.jar PingClass.class
+RUN javac IpCheckerClass.java -encoding utf8
+CMD java IpCheckerClass
