@@ -1,0 +1,1 @@
+java.exe -classpath "D:\repos\IntlliJ IDEA repos\p7\out\production\p7;D:\repos\IntlliJ IDEA repos\p7\out\production\Connection;C:\Users\olegn\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar" MOTIVATEDServer

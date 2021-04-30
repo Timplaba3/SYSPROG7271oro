@@ -1,0 +1,4 @@
+FROM amazonlinux
+RUN yum install -y python3
+COPY clientsp7.py .
+CMD python3 clientsp7.py

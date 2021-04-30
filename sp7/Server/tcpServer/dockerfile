@@ -1,0 +1,16 @@
+FROM amazonlinux
+#RUN yum install -y java-1.7.0-openjdk-devel
+RUN yum install -y wget
+RUN yum install -y tar
+RUN yum install -y gzip
+RUN wget -q https://download.java.net/java/GA/jdk12/GPL/openjdk-12_linux-x64_bin.tar.gz
+RUN tar -xzf openjdk-12_linux-x64_bin.tar.gz
+ENV JAVA_HOME ./jdk-12
+RUN export JAVA_HOME
+ENV PATH ./jdk-12/bin:$PATH
+RUN export PATH
+COPY TCPServer.jar .
+EXPOSE 25565
+#RUN javac threadSyncSp6.java -encoding utf8
+COPY data ./data
+CMD java -jar TCPServer.jar
